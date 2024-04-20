@@ -34,4 +34,30 @@ class JdbcCrudTest {
     JdbcCrud api = new JdbcCrud();
     api.doCrud(api::delete);
   }
+
+  @Test
+  public void testJdbcCrudInsertPrepare(){
+    JdbcCrud api = new JdbcCrud();
+    api.doCrud(api::insertPrepare);
+  }
+
+  @Test
+  public void testJdbcCrudQueryPrepare(){
+    JdbcCrud api = new JdbcCrud();
+    api.doCrud(api::queryPrepare);
+  }
+
+  @Test
+  public void testJdbcCrudUpdatePrepare(){
+    JdbcCrud api = new JdbcCrud();
+    api.doCrud(api::updatePrepare);
+  }
+
+  @Test
+  public void testJdbcCrudDeletePrepare(){
+    JdbcCrud api = new JdbcCrud();
+    api.doCrud(api::deletePrepare);
+  }
+
+
 }
