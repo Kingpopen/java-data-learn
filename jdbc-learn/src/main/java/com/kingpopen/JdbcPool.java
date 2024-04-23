@@ -37,10 +37,12 @@ public class JdbcPool {
   }
 
   public void doCrudByDruid() {
+    final String queryName = "张三";
     try (Connection connection = getConnectionByDruid()) {
       // 进行crud操作
       PreparedStatement preparedStatement = connection.prepareStatement(
           "select * from user where username = ?;");
+      preparedStatement.setString(1, queryName);
       ResultSet res = preparedStatement.executeQuery();
       while (res.next()) {
         String username = res.getString("username");
