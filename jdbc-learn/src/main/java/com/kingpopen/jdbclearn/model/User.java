@@ -1,8 +1,8 @@
-package com.kingpopen.model;
+package com.kingpopen.jdbclearn.model;
 
-import static com.kingpopen.common.Const.ADDRESSES;
-import static com.kingpopen.common.Const.ADJECTIVES;
-import static com.kingpopen.common.Const.NOUNS;
+import static com.kingpopen.jdbclearn.common.Const.ADDRESSES;
+import static com.kingpopen.jdbclearn.common.Const.ADJECTIVES;
+import static com.kingpopen.jdbclearn.common.Const.NOUNS;
 
 import java.util.Random;
 import java.util.UUID;

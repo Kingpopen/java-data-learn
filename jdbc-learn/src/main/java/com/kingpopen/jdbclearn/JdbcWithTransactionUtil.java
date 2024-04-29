@@ -1,4 +1,4 @@
-package com.kingpopen;
+package com.kingpopen.jdbclearn;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import java.io.InputStream;

@@ -1,9 +1,9 @@
-package com.kingpopen;
+package com.kingpopen.jdbclearn;
 
-import static com.kingpopen.common.Const.PASSWORD;
-import static com.kingpopen.common.Const.USERNAME;
+import static com.kingpopen.jdbclearn.common.Const.PASSWORD;
+import static com.kingpopen.jdbclearn.common.Const.USERNAME;
 
-import com.kingpopen.model.User;
+import com.kingpopen.jdbclearn.model.User;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

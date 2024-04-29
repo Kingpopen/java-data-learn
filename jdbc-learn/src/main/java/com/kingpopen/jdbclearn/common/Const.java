@@ -1,4 +1,4 @@
-package com.kingpopen.common;
+package com.kingpopen.jdbclearn.common;
 
 import java.util.Arrays;
 import java.util.List;
