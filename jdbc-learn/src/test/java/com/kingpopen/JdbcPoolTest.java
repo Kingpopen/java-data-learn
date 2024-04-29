@@ -1,7 +1,6 @@
 package com.kingpopen;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import com.kingpopen.jdbclearn.JdbcPool;
 import org.junit.jupiter.api.Test;
 
 /**

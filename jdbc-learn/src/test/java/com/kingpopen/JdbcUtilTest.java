@@ -1,7 +1,7 @@
 package com.kingpopen;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import com.kingpopen.jdbclearn.JdbcCrud;
+import com.kingpopen.jdbclearn.JdbcUtil;
 import java.sql.Connection;
 import org.junit.jupiter.api.Test;
 

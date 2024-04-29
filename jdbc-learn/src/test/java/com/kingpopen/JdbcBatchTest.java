@@ -1,9 +1,10 @@
 package com.kingpopen;
 
-import static com.kingpopen.common.Const.URL_BATCH;
-import static com.kingpopen.common.Const.URL_NORMAL;
+import static com.kingpopen.jdbclearn.common.Const.URL_BATCH;
+import static com.kingpopen.jdbclearn.common.Const.URL_NORMAL;
 
-import com.kingpopen.model.User;
+import com.kingpopen.jdbclearn.JdbcBatch;
+import com.kingpopen.jdbclearn.model.User;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
