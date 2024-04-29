@@ -10,6 +10,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>jdbc-learn</module>
+    <module>mybatis-learn</module>
   </modules>
 
   <properties>
