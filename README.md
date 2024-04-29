@@ -4,7 +4,8 @@
 - [x] 基础操作
 - [x] 批量操作
 - [x] 连接池
-- [ ] 事务的使用
+- [x] 事务的使用
+- [ ] 整合Spring
 ### 2. mybatis-learn
 java 整合 Mybatis
 - [ ] 基础操作
