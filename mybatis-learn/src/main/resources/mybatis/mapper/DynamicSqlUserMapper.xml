@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kingpopen.mybatislearn.dao.mapper.DynamicSqlUserMapper">
+  <resultMap id="user" type="com.kingpopen.mybatislearn.model.User">
+    <result property="username" column="username"/>
+    <result property="identityId" column="identity_id"/>
+    <result property="address" column="address"/>
+  </resultMap>
+
+  <select id="findByIf" resultMap="user">
+    select *
+    from user
+    where
+    <if test="user.username != null and user.username != ''">
+      username = #{user.username}
+    </if>
+    <if test="user.identityId != null">
+      and identity_id = #{user.identityId}
+    </if>
+  </select>
+
+  <select id="findByWhere" resultMap="user">
+    select *
+    from user
+    <where>
+      <if test="user.username != null and user.username != ''">
+        username = #{user.username}
+      </if>
+      <if test="user.identityId != null">
+        and identity_id = #{user.identityId}
+      </if>
+    </where>
+  </select>
+
+  <select id="findByTrim" resultMap="user">
+    select *
+    from user
+    <trim prefix="where" suffixOverrides="and">
+      <if test="user.username != null and user.username != ''">
+        username = #{user.username} and
+      </if>
+      <if test="user.identityId != null">
+        identity_id = #{user.identityId}
+      </if>
+    </trim>
+  </select>
+
+  <select id="findByChoose" resultMap="user">
+    select *
+    from user
+    <where>
+      <choose>
+        <when test="user.username != null and user.username != ''">
+          username = #{user.username}
+        </when>
+        <when test="user.identityId != null">
+          identity_id = #{user.identityId}
+        </when>
+      </choose>
+    </where>
+  </select>
+
+  <select id="findByForeach" resultMap="user">
+    select *
+    from user
+    where identity_id in
+    <foreach collection="identityIds" item="identityId" separator="," open="(" close=")">
+      #{identityId}
+    </foreach>
+  </select>
+
+
+  <sql id="userColumns">
+    username,
+    identity_id,
+    address
+  </sql>
+
+  <select id="findBySql" resultMap="user">
+    select
+    <include refid="userColumns"/>
+    from user
+    limit #{pageSize}
+  </select>
+</mapper>
