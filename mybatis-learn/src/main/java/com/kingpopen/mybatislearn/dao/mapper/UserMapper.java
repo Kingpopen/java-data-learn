@@ -17,5 +17,7 @@ public interface UserMapper {
 
   int deleteByName(final String username);
 
-  List<User> findByName(final String username);
+  List<User> findByName(@Param("username") final String username);
+
+  List<User> findByLikeName(@Param("username") final String username);
 }

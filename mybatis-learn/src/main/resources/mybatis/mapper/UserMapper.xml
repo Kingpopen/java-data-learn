@@ -15,7 +15,7 @@
     where username = #{username}
   </select>
 
-  <update id="update" parameterType="com.kingpopen.mybatislearn.model.User">
+  <update id="update">
     update user
     set
     username = #{user.username},
@@ -32,4 +32,10 @@
   <delete id="deleteByName">
     delete from user where username = #{username}
   </delete>
+
+  <select id="findByLikeName" resultMap="user">
+    select *
+    from user
+    where username like "%"#{username}"%"
+  </select>
 </mapper>
