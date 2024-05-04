@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kingpopen.infrastructure.dao.UserMapper">
+  <resultMap id="user" type="com.kingpopen.model.User">
+    <result property="username" column="username"/>
+    <result property="identityId" column="identity_id"/>
+    <result property="address" column="address"/>
+  </resultMap>
+
+  <sql id="userColumns">
+    username,
+    identity_id,
+    address
+  </sql>
+
+  <select id="findByUsername" resultMap="user">
+    select
+    <include refid="userColumns"/>
+    from user
+    <where>
+      <if test="username != null and username != ''">
+        username = #{username}
+      </if>
+    </where>
+  </select>
+
+  <insert id="insert">
+    insert
+    into user
+    values(null, #{user.username}, #{user.identityId}, #{user.address})
+  </insert>
+
+  <update id="updateByUsername">
+    update
+    user
+    set identity_id = #{user.identityId}, address = #{user.address}
+    where username = #{user.username}
+  </update>
+
+  <delete id="deleteByUsername">
+    delete
+    from user
+    where username = #{username}
+  </delete>
+</mapper>

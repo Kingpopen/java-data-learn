@@ -11,6 +11,7 @@
   <modules>
     <module>jdbc-learn</module>
     <module>mybatis-learn</module>
+    <module>mybatis-spring-learn</module>
   </modules>
 
   <properties>
