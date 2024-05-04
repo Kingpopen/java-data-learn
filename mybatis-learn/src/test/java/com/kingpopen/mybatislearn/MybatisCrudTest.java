@@ -1,4 +1,4 @@
-package com.kingpopen;
+package com.kingpopen.mybatislearn;
 
 import com.kingpopen.mybatislearn.MybatisCrud;
 import com.kingpopen.mybatislearn.infrastructure.common.SqlSessionUtil;
