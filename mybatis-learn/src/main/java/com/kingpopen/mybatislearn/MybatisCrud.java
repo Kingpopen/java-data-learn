@@ -2,16 +2,11 @@ package com.kingpopen.mybatislearn;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import com.kingpopen.mybatislearn.dao.mapper.UserMapper;
-import com.kingpopen.mybatislearn.infrastructure.common.MyDruidSourceFactory;
 import com.kingpopen.mybatislearn.model.User;
-import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
 import java.util.Properties;
-import java.util.function.Consumer;
 import javax.sql.DataSource;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSession;
@@ -69,7 +64,7 @@ public class MybatisCrud {
   public void save(final SqlSession session, final User user) {
     UserMapper mapper = session.getMapper(UserMapper.class);
     int cnt = mapper.insert(user);
-    log.info("save cnt is:{}",  cnt);
+    log.info("save cnt is:{}", cnt);
   }
 
   // 修改

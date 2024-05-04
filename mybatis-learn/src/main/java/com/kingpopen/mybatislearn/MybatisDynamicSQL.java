@@ -13,7 +13,8 @@ import org.apache.ibatis.session.SqlSession;
  * @date 2024/5/3 10:19:12
  */
 public class MybatisDynamicSQL {
-  public void queryByIf(final User user){
+
+  public void queryByIf(final User user) {
     SqlSession sqlSession = SqlSessionUtil.getSqlSession(true);
     DynamicSqlUserMapper mapper = sqlSession.getMapper(DynamicSqlUserMapper.class);
     List<User> users = mapper.findByIf(user);
@@ -22,7 +23,7 @@ public class MybatisDynamicSQL {
     sqlSession.close();
   }
 
-  public void queryByWhere(final User user){
+  public void queryByWhere(final User user) {
     SqlSession sqlSession = SqlSessionUtil.getSqlSession(true);
     DynamicSqlUserMapper mapper = sqlSession.getMapper(DynamicSqlUserMapper.class);
     List<User> users = mapper.findByWhere(user);
@@ -31,7 +32,7 @@ public class MybatisDynamicSQL {
     sqlSession.close();
   }
 
-  public void queryByTrim(final User user){
+  public void queryByTrim(final User user) {
     SqlSession sqlSession = SqlSessionUtil.getSqlSession(true);
     DynamicSqlUserMapper mapper = sqlSession.getMapper(DynamicSqlUserMapper.class);
     List<User> users = mapper.findByTrim(user);
@@ -40,7 +41,7 @@ public class MybatisDynamicSQL {
     sqlSession.close();
   }
 
-  public void queryByChoose(final User user){
+  public void queryByChoose(final User user) {
     SqlSession sqlSession = SqlSessionUtil.getSqlSession(true);
     DynamicSqlUserMapper mapper = sqlSession.getMapper(DynamicSqlUserMapper.class);
     List<User> users = mapper.findByChoose(user);
@@ -49,7 +50,7 @@ public class MybatisDynamicSQL {
     sqlSession.close();
   }
 
-  public void queryByForeach(final Integer[] identityIds){
+  public void queryByForeach(final Integer[] identityIds) {
     SqlSession sqlSession = SqlSessionUtil.getSqlSession(true);
     DynamicSqlUserMapper mapper = sqlSession.getMapper(DynamicSqlUserMapper.class);
     List<User> users = mapper.findByForeach(identityIds);
@@ -58,7 +59,7 @@ public class MybatisDynamicSQL {
     sqlSession.close();
   }
 
-  public void queryBySql(final Integer pageSize){
+  public void queryBySql(final Integer pageSize) {
     SqlSession sqlSession = SqlSessionUtil.getSqlSession(true);
     DynamicSqlUserMapper mapper = sqlSession.getMapper(DynamicSqlUserMapper.class);
     List<User> users = mapper.findBySql(pageSize);

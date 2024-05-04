@@ -11,6 +11,7 @@ import org.apache.ibatis.annotations.Param;
  * @date 2024/5/3 10:20:42
  */
 public interface DynamicSqlUserMapper {
+
   List<User> findByIf(@Param("user") final User user);
 
   List<User> findByWhere(@Param("user") final User user);
@@ -20,5 +21,6 @@ public interface DynamicSqlUserMapper {
   List<User> findByChoose(@Param("user") final User user);
 
   List<User> findByForeach(@Param("identityIds") Integer[] identityIds);
+
   List<User> findBySql(@Param("pageSize") final Integer pageSize);
 }

@@ -12,6 +12,7 @@ import org.apache.ibatis.datasource.DataSourceFactory;
  * @date 2024/04/29 22:13:50
  */
 public class MyDruidSourceFactory implements DataSourceFactory {
+
   private DataSource dataSource;
 
   @Override

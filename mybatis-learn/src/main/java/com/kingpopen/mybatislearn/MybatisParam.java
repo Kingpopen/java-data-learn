@@ -13,7 +13,8 @@ import org.apache.ibatis.session.SqlSession;
  * @date 2024/5/2 21:41:31
  */
 public class MybatisParam {
-  public void queryByUsername(final String username){
+
+  public void queryByUsername(final String username) {
     SqlSession sqlSession = SqlSessionUtil.getSqlSession(true);
     UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
@@ -22,7 +23,7 @@ public class MybatisParam {
     users.forEach(System.out::println);
   }
 
-  public void queryByLikeName(final String username){
+  public void queryByLikeName(final String username) {
     SqlSession sqlSession = SqlSessionUtil.getSqlSession(true);
     UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 

@@ -11,6 +11,7 @@ import org.apache.ibatis.annotations.Param;
  * @date 2024/04/24 21:15:06
  */
 public interface UserMapper {
+
   int insert(@Param("user") final User user);
 
   int update(@Param("user") final User user);
