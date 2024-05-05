@@ -6,13 +6,14 @@ import com.kingpopen.mybatislearn.model.User;
 import java.io.InputStream;
 import java.util.Properties;
 import javax.sql.DataSource;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * @author 彭锦波
@@ -20,8 +21,9 @@ import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
  * @description mybatis入门 增删改查
  * @date 2024/04/24 21:08:17
  */
-@Slf4j
 public class MybatisCrud {
+
+  private static final Logger log = LogManager.getLogger(MybatisCrud.class);
 
   // 不使用xml构建 todo 这个会报错，还未解决
   public SqlSessionFactory createSqlSessionFactoryNoXml() {

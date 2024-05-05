@@ -12,6 +12,7 @@
     <module>jdbc-learn</module>
     <module>mybatis-learn</module>
     <module>mybatis-spring-learn</module>
+    <module>mybatis-springBoot-learn</module>
   </modules>
 
   <properties>
@@ -21,17 +22,25 @@
   </properties>
 
   <dependencies>
+    <!--    使用mysql就导入mysql的驱动依赖-->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.28</version>
+    </dependency>
+
+    <!-- druid 连接池  -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.2.18</version>
+    </dependency>
+
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.18.30</version>
-    </dependency>
-
-<!--    日志打印-->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
-      <version>1.7.25</version>
+      <scope>provided</scope>
     </dependency>
 
 <!--    测试-->

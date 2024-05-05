@@ -1,7 +1,5 @@
 package com.kingpopen.mybatislearn;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import com.kingpopen.mybatislearn.model.User;
 import org.junit.jupiter.api.Test;
 
@@ -21,35 +19,35 @@ class MybatisDynamicSQLTest {
   }
 
   @Test
-  public void testQueryByWhere(){
+  public void testQueryByWhere() {
     MybatisDynamicSQL api = new MybatisDynamicSQL();
     User conditionUser = User.createUser("", 1002, "");
     api.queryByWhere(conditionUser);
   }
 
   @Test
-  public void testQueryByTrim(){
+  public void testQueryByTrim() {
     MybatisDynamicSQL api = new MybatisDynamicSQL();
     User conditionUser = User.createUser("", 1002, "");
     api.queryByTrim(conditionUser);
   }
 
   @Test
-  public void testQueryByChoose(){
+  public void testQueryByChoose() {
     MybatisDynamicSQL api = new MybatisDynamicSQL();
     User conditionUser = User.createUser("张三", 100, "");
     api.queryByChoose(conditionUser);
   }
 
   @Test
-  public void testQueryByForeach(){
+  public void testQueryByForeach() {
     MybatisDynamicSQL api = new MybatisDynamicSQL();
     Integer[] identityIds = {1001, 1002, 1003};
     api.queryByForeach(identityIds);
   }
 
   @Test
-  public void testQueryBySql(){
+  public void testQueryBySql() {
     MybatisDynamicSQL api = new MybatisDynamicSQL();
     api.queryBySql(2);
   }

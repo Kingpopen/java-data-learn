@@ -14,7 +14,6 @@ import org.junit.jupiter.api.Test;
  * @description
  * @date 2024/04/24 22:16:20
  */
-@Slf4j
 class MybatisCrudTest {
 
   @Test
