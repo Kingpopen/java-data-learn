@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kingpopen.mybatisspringboot.infrastructure.dao.UserMapper">
+  <resultMap id="userEntity" type="com.kingpopen.mybatisspringboot.model.User">
+    <result property="id" column="id"/>
+    <result property="username" column="username"/>
+    <result property="identityId" column="identity_id"/>
+    <result property="address" column="address"/>
+  </resultMap>
+
+  <sql id="userColumns">
+    id,
+    username,
+    identity_id,
+    address
+  </sql>
+
+  <select id="findByUsername" resultMap="userEntity">
+    select
+    <include refid="userColumns"/>
+    from user
+    where username = #{username}
+  </select>
+
+  <insert id="insert">
+    insert
+    into
+    user
+    values(null, #{user.username}, #{user.identityId}, #{user.address})
+  </insert>
+
+  <update id="updateByUsername">
+    update
+    user
+    set username = #{user.username}, identity_id = #{user.identityId}, address = #{user.address}
+    where username = #{user.username}
+  </update>
+
+  <delete id="deleteByUsername">
+    delete
+    from
+    user
+    where username = #{username}
+  </delete>
+
+  <insert id="insertBatch">
+    insert into
+    user
+    values
+    <foreach collection="users" item="user" separator=",">
+      (null, #{user.username}, #{user.identityId}, #{user.address})
+    </foreach>
+  </insert>
+
+</mapper>
