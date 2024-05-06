@@ -1,6 +1,6 @@
 package com.kingpopen.mybatisspringboot;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.kingpopen.mybatisspringboot.model.User;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,7 @@ class MybatisSpringBootCrudTest {
   private MybatisSpringBootCrud api;
 
   @Test
-  public void testCrud(){
+  public void testCrud() {
     User user;
     int cnt = 0;
     // 1. 插入

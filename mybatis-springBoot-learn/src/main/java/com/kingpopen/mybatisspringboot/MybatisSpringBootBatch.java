@@ -9,7 +9,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -62,7 +61,7 @@ public class MybatisSpringBootBatch {
     List<List<User>> partitions = Lists.partition(users, 100000);
 
     long begin = System.currentTimeMillis();
-    try (SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH, false)) {
+    try (SqlSession sqlSession = sqlSessionFactory.openSession(false)) {
       UserMapper mapper = sqlSession.getMapper(UserMapper.class);
       partitions.forEach(partition -> {
         mapper.insertBatch(partition);

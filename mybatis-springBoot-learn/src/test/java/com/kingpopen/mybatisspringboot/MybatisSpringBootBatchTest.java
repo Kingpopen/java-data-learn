@@ -15,21 +15,23 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 @SpringBootTest
 class MybatisSpringBootBatchTest {
+
   @Autowired
   private MybatisSpringBootBatch api;
+
   @Test
-  public void testBatchByOneValue(){
+  public void testBatchByOneValue() {
     List<User> users = new ArrayList<>();
-    for (int i = 0; i<1000000; i++){
+    for (int i = 0; i < 1000000; i++) {
       users.add(User.createUserByRandom());
     }
     api.batchInsertByOneValue(users);
   }
 
   @Test
-  public void testBatchByMultiValue(){
+  public void testBatchByMultiValue() {
     List<User> users = new ArrayList<>();
-    for (int i = 0; i<1000000; i++){
+    for (int i = 0; i < 1000000; i++) {
       users.add(User.createUserByRandom());
     }
     api.batchInsertByMultiValue(users);

@@ -31,7 +31,7 @@ public class User {
     return new User(id, username, identityId, address);
   }
 
-  public static User createUserByRandom(){
+  public static User createUserByRandom() {
     Random random = new Random();
     final String username = ADJECTIVES.get(random.nextInt(10)) + NOUNS.get(random.nextInt(10));
     final String identityId = UUID.randomUUID().toString();
