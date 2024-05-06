@@ -55,6 +55,7 @@ mapper接口不需要手动实现，而是通过注册的方法，交给Spring�
 我们需要做的是指定mapper接口的位置信息\
 我在配置类上添加@MapperScan注解指定了对应mapper接口的位置，
 Spring就会创建对应的Mapper的Bean
+**注：其中使用的SqlSession是 SqlSessionTemplate类型。**
 
 ```java
 @Configuration

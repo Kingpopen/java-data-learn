@@ -54,7 +54,7 @@ CREATE TABLE `user_tmp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
 * 普通的执行流程：java客户端发送一次请求 到mysql，mysql进行执行，并返回结果。如果有多次这个请求，就要执行多个这个流程。
-* 批处理执行流程： java客户端一次将多个请求(insert)，组装成一个请求(values(), (), ())，进行发送。
+* 批处理执行流程： java客户端一次将多个请求(insert)，组装成一个请求(values(), (), ())，进行发送。（注：连接串后面记得加上rewriteBatchedStatements=true）
 * 批处理的优点：
   * 当执行批处理，就可以减少网络IO的次数。
   * insert into table values(),(),()... 这种语句本身的执行效率会比较高。
