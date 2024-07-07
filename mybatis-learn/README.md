@@ -7,7 +7,10 @@ SqlSessionFactory是一个接口，它的默认实现是:DefaultSqlSessionFactor
 > 其中含有 Datasource 和 TransactionManager的信息
 > 
 > Datasource 如果需要自定义，可以实现ibatis中的接口 DataSourceFactory
-在构建时依赖于SqlSessionFactoryBuilder 解析配置文件 进行构建。
+在构建时依赖于SqlSessionFactoryBuilder 解析配置文件 进行构建。  
+> TransactionManager表示事务管理器，有两个两种选项：  
+> 一种是：JDBC  
+> 另一种是：Managed （交给三方容器进行事务管理）
 2. 使用Java代码直接构建（当前我构建的方式会报错）
 #### 2. 获取SqlSession
 通过 SqlSessionFactory的openSession方法，可以指定是否自动提交
