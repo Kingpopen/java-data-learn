@@ -27,7 +27,12 @@ public class MybatisSpringBootBatch {
   private SqlSessionFactory sqlSessionFactory;
 
   /**
-   * insert的内容每一次是一条数据 1. 采用 ExecutorType.BATCH 模式进行插入 2. mysql连接串中添加 rewriteBatchedStatements=true
+   * insert的内容每一次是一条数据
+   * <p>
+   *  1. 采用 ExecutorType.BATCH 模式进行插入
+   * <p>
+   * 2. mysql连接串中添加 rewriteBatchedStatements=true
+   * <p>
    * 100W条数据 耗时：8725ms
    *
    * @param users: 插入的用户信息
