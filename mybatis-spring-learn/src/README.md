@@ -1,7 +1,8 @@
 ## Mybatis-Spring学习
-链接：https://mybatis.org/spring/zh_CN/index.html \
+链接：https://mybatis.org/spring/zh_CN/index.html  
 - [x] 基础的学习
-- [ ] 关于事务的学习 \
+- [ ] 关于事务的学习  
+
 主要分为几个步骤:
 1. 创建数据源
 2. 创建SqlSessionFactory, 依赖以下两样:
@@ -23,11 +24,11 @@ public DataSource dataSource(){
 }
 ```
 ### 2. 创建SqlSessionFactory
-通过Spring中的FactoryBean自定义实例化bean的逻辑，意味着只需要创建\
-SqlSessionFactoryBean：这是mybatis-spring中的类，实现了FactoryBean的接口 \
+通过Spring中的FactoryBean自定义实例化bean的逻辑，意味着只需要创建  
+SqlSessionFactoryBean：这是mybatis-spring中的类，实现了FactoryBean的接口  
 
-SqlSessionFactoryBean中可以指定mybatis-config.xml中的内容，\
-也可以直接指定mybatis-config.xml的路径。\
+SqlSessionFactoryBean中可以指定mybatis-config.xml中的内容，  
+也可以直接指定mybatis-config.xml的路径。  
 它的的目的主要是构造出 SqlSessionFactory
 
 ```java
@@ -51,10 +52,10 @@ SqlSessionFactoryBean中可以指定mybatis-config.xml中的内容，\
   }
 ```
 ### 3. 实现Mapper接口
-mapper接口不需要手动实现，而是通过注册的方法，交给Spring通过动态代理的方式进行实现。 \
-我们需要做的是指定mapper接口的位置信息\
+mapper接口不需要手动实现，而是通过注册的方法，交给Spring通过动态代理的方式进行实现。  
+我们需要做的是指定mapper接口的位置信息  
 我在配置类上添加@MapperScan注解指定了对应mapper接口的位置，
-Spring就会创建对应的Mapper的Bean
+Spring就会创建对应的Mapper的Bean  
 **注：其中使用的SqlSession是 SqlSessionTemplate类型。**
 
 ```java
