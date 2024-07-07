@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kingpopen.infrastructure.dao.StockMapper">
+  <select id="findById" resultType="com.kingpopen.model.Stock">
+    select
+    id,
+    product_code as productCode,
+    count,
+    address
+    from stock
+    where id = #{id}
+  </select>
+
+  <update id="update">
+    update stock
+    set
+        product_code = #{stock.productCode},
+        count = #{stock.count},
+        address = #{stock.address}
+    where id = #{stock.id}
+  </update>
+
+  <delete id="deleteById">
+    delete from stock
+    where id = #{id}
+  </delete>
+
+  <insert id="save">
+    insert into stock
+    (product_code, count, address)
+    values (#{stock.productCode}, #{stock.count}, #{stock.address})
+  </insert>
+
+</mapper>
