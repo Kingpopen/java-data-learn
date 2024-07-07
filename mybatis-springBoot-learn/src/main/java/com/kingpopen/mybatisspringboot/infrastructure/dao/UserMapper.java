@@ -14,6 +14,8 @@ public interface UserMapper {
 
   List<User> findByUsername(@Param("username") final String username);
 
+  List<User> findByPage(@Param("id") int id, @Param("limit") int limit);
+
   int insert(@Param("user") final User user);
 
   int updateByUsername(@Param("user") final User user);
