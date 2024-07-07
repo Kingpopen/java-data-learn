@@ -13,6 +13,7 @@
     <module>mybatis-learn</module>
     <module>mybatis-spring-learn</module>
     <module>mybatis-springBoot-learn</module>
+    <module>transaction-learn</module>
   </modules>
 
   <properties>
