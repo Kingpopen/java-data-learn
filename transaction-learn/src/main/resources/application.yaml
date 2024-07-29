@@ -8,9 +8,14 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     initial-size: 1
     min-idle: 1
-    max-active: 5
+    max-active: 1
     test-on-borrow: true
     validation-query: SELECT 1
 
 mybatis:
   mapper-locations: mybatis/mapper/*.xml
+
+logging:
+  level:
+    org.mybatis.spring: DEBUG
+    com.kingpopen.infrastructure.dao: DEBUG
